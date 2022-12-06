@@ -1,5 +1,21 @@
 # FastAPI-TDD-Docker
 
+### Commands (mostly for Windows)
+
+```
+uvicorn app.main:app --reload
+```
+
+```
+env\Scripts\activate.bat
+```
+
+```
+set TESTING=1
+```
+
+<hr>
+
 ### Overview
 
 An example of dockerized fastapi application developed using test-driven technology
