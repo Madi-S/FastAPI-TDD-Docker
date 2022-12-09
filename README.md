@@ -56,6 +56,12 @@ Run tests
 docker-compose exec web python -m pytest
 ```
 
+Initialize schemas
+
+```
+docker-compose exec web python app/db.py
+```
+
 <hr>
 
 ### Overview
