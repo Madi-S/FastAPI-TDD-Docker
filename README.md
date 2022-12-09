@@ -2,16 +2,58 @@
 
 ### Commands (mostly for Windows)
 
+Run application
+
 ```
 uvicorn app.main:app --reload
 ```
+
+Get into pyenv
 
 ```
 env\Scripts\activate.bat
 ```
 
+Set environmental variables
+
 ```
 set TESTING=1
+```
+
+Set up docker
+
+```
+docker-compose up -d --build
+```
+
+Connect to postgres
+
+```
+docker-compose exec web-db psql -U postgres
+```
+
+Enter postgres database
+
+```
+docker-compose exec web-db psql -U postgres
+```
+
+Init migrations using Aerich
+
+```
+docker-compose exec web aerich init -t app.db.TORTOISE_ORM
+```
+
+Create a migration
+
+```
+docker-compose exec web aerich init-db
+```
+
+Run tests
+
+```
+docker-compose exec web python -m pytest
 ```
 
 <hr>
