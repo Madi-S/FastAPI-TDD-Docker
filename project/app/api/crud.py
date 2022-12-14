@@ -1,19 +1,16 @@
 from app.models.pydantic import SummaryPayloadSchema
-from app.models.tortoise import TextSummary, SummarySchema
+from app.models.tortoise import SummarySchema, TextSummary
 
 
 async def post(payload: SummaryPayloadSchema) -> int:
-    '''Returns created summary id'''
-    summary = TextSummary(
-        url=payload.url,
-        summary='test summary'
-    )
+    """Returns created summary id"""
+    summary = TextSummary(url=payload.url, summary="test summary")
     await summary.save()
     return summary.id
 
 
 async def get(id: int) -> dict | None:
-    '''Returns summary by id'''
+    """Returns summary by id"""
     summary = await TextSummary.filter(id=id).first().values()
     if summary:
         return summary

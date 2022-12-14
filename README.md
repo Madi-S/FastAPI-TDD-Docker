@@ -62,6 +62,43 @@ Initialize schemas
 docker-compose exec web python app/db.py
 ```
 
+Run tests with coverage
+
+```
+docker-compose exec web python -m pytest --cov="."
+docker-compose exec web python -m pytest --cov="." --cov-report html
+```
+
+Run flake8 for code quality
+
+```
+docker-compose exec web flake8 .
+```
+
+Check for formatting errors and format them using black
+
+```
+docker-compose exec web black . --check
+docker-compose exec web black . --diff
+docker-compose exec web black .
+```
+
+Sort imports using isort
+
+```
+docker-compose exec web isort . --check-only
+docker-compose exec web isort . --diff
+docker-compose exec web isort .
+```
+
+Verify all
+
+```
+docker-compose exec web flake8 .
+docker-compose exec web black . --check
+docker-compose exec web isort . --check-only
+```
+
 <hr>
 
 ### Overview
