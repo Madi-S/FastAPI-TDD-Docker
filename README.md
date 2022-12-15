@@ -56,6 +56,12 @@ Run tests
 docker-compose exec web python -m pytest
 ```
 
+Run tests with monkeypatching
+
+```
+docker-compose exec web pytest -k "unit" -n auto
+```
+
 Initialize schemas
 
 ```
